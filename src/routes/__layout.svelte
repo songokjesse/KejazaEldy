@@ -4,6 +4,10 @@
 import NavBar from "../components/NavBar.svelte";
 </script>
 
+<svelte:head>
+	<title>KejaZaEldy</title>
+	<html lang="en" />
+</svelte:head>
 <header>
   <NavBar/>
 </header>
