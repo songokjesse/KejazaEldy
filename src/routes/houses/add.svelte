@@ -1,5 +1,10 @@
 
+<script>
+    const handleSubmit = () => {
+        console.log("House Added")
+    }
 
+</script>
 <div class="text-sm breadcrumbs">
   <ul>
     <li>
@@ -22,15 +27,44 @@
 </div>
 
 <div class="mt-4 mb-4">
-<form>
-<div class="card w-96 bg-base-100 shadow-xl">
+<form on:submit|preventDefault={handleSubmit}>
+<div class="card w-full bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <h2 class="card-title">Add House</h2>
+  
+<div class="form-control w-full ">
+  <label class="label" >
+    <span class="label-text">House Name?</span>
+  </label>
+  <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+</div>
+
+<div class="form-control w-full ">
+  <label class="label" >
+    <span class="label-text">House Location</span>
+  </label>
+  <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+</div>
+
+
+<div class="form-control w-full ">
+  <label class="label" >
+    <span class="label-text">House Size</span>
+  </label>
+  <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+</div>
+
+<div class="form-control w-full ">
+  <label class="label" >
+    <span class="label-text">Price for Rent</span>
+  </label>
+  <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+</div>
+
+    <div class="card-actions justify-end mt-2">
+      <button class="btn btn-primary">Add</button>
     </div>
   </div>
 </div>
-</div>
 </form>
+</div>
