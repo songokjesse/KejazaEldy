@@ -1,2 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="mt-4">
+    <h1>Search Goes Here</h1>
+</div>
+<div class="card">
+
+</div>
