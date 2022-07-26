@@ -9,3 +9,56 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  name    String?
+  password String
+  role    Role     @default(USER)
+  houses  House[]
+  profile Profile?
+}
+
+model Profile {
+  id     Int    @id @default(autoincrement())
+  bio    String
+  imageUrl    String
+  user   User   @relation(fields: [userId], references: [id])
+  userId Int    @unique
+}
+
+model House {
+  id         Int        @id @default(autoincrement())
+  createdAt  DateTime   @default(now())
+  name     String
+  price     String
+  approved  Boolean    @default(false)
+  available  Boolean    @default(false)
+  owner     User       @relation(fields: [ownerId], references: [id])
+  ownerId   Int
+  location     Location      @relation(fields: [locationId], references: [id])
+  locationId   Int
+  category     Category      @relation(fields: [categoryId], references: [id])
+  categoryId   Int
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  houses House[]
+}
+model Location {
+  id    Int    @id @default(autoincrement())
+  name  String
+  houses House[]
+}
+model Amenity {
+  id    Int    @id @default(autoincrement())
+  name  String
+}
+
+enum Role {
+  USER
+  ADMIN
+}

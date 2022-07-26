@@ -1,9 +1,8 @@
 
 <script>
-    const handleSubmit = () => {
-        console.log("House Added")
-    }
-
+  import { goto } from '$app/navigation';
+  import { createForm } from "svelte-forms-lib";
+// $: console.log(prisma)
 </script>
 <div class="text-sm breadcrumbs">
   <ul>
@@ -27,7 +26,7 @@
 </div>
 
 <div class="mt-4 mb-4">
-<form on:submit|preventDefault={handleSubmit}>
+<form >
 <div class="card w-full bg-base-100 shadow-xl">
   <div class="card-body">
     <h2 class="card-title">Add House</h2>

@@ -21,6 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@prisma/client": "^4.1.0",
 		"daisyui": "^2.20.0",
 		"svelte-forms-lib": "^2.0.1"
 	}
